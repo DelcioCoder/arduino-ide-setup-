@@ -188,6 +188,30 @@ groups
 
 ---
 
+## 🔌 10. Alias para Terminal Serial (Miniterm)
+
+Se você preferir usar o terminal para monitorar a saída serial direto no terminal, pode usar o `miniterm` (incluído no `python3-serial`).
+
+Adicione ao seu `~/.bashrc`:
+
+```bash
+alias miniterm='python3 -m serial.tools.miniterm /dev/ttyUSB0 115200'
+```
+
+Depois rode:
+
+```bash
+source ~/.bashrc
+```
+
+Agora basta usar:
+
+```bash
+miniterm
+```
+
+---
+
 ## 🧠 Dicas
 
 - Use `/opt` para manter o sistema organizado
