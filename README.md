@@ -135,6 +135,59 @@ Deve aparecer algo como:
 
 ---
 
+## 🚀 Instalar suporte para ESP32 (DevKit V1)
+
+### 🧠 1. Adicionar URL do ESP32
+
+1. Abra o **Arduino IDE**.
+2. Vá em: **File → Preferences**.
+3. Procure por: **“Additional Board Manager URLs”**.
+4. Cole isto:
+   `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
+
+👉 *Se já tiver algo lá, separa com vírgula.*
+
+### 📦 2. Instalar o pacote ESP32
+
+1. Vá em: **Tools → Board → Boards Manager**.
+2. Pesquisa por: **esp32**.
+3. Instala: **“ESP32 by Espressif Systems”** (este é o oficial).
+
+### ⚙️ 3. Selecionar a placa correta
+
+Depois de instalar:
+1. Vá em: **Tools → Board**.
+2. Escolhe: **ESP32 Dev Module** (serve perfeitamente para o ESP32 DevKit V1).
+
+### 🔌 4. Conectar o ESP32
+
+Liga via USB e verifica no terminal:
+
+```bash
+ls /dev/tty*
+```
+
+Deve aparecer algo como:
+`/dev/ttyUSB0` ou `/dev/ttyACM0`
+
+### ⚠️ 5. Se não aparecer a porta
+
+Instala drivers comuns e bibliotecas necessárias:
+
+```bash
+sudo apt install python3-serial
+```
+
+E confirma se você está no grupo `dialout`:
+
+```bash
+groups
+```
+
+> **Nota:** Certifique-se de que `dialout` aparece na lista. Se você acabou de adicionar o grupo no passo 8, lembre-se que o reinício é necessário.
+
+---
+
 ## 🧠 Dicas
 
 - Use `/opt` para manter o sistema organizado
